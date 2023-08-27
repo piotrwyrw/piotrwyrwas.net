@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    text-shadow: -1px 2px 6px;
+}
+
+@font-face {
+    font-family: terminal-font;
+    src: url("JetBrainsMono-Regular.ttf");
+}
+
+.container {
+    font-family: 'terminal-font', sans-serif;
+    color: white;
+    background-color: black;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+}
+
+.terminal-view {
+    padding: 20px;
+    margin: auto;
+    background-color: black;
+}
+
+@keyframes cursor-blink {
+    from {
+        box-shadow: 1px 0 28px 0 white;
+        background-color: white;
+    }
+
+    50% {
+        box-shadow: 0 0 0 0 black;
+        background-color: transparent;
+    }
+
+    to {
+        box-shadow: 1px 0 28px 0 white;
+        background-color: white;
+    }
+}
+
+.terminal-view:after {
+    content: '\00a0';
+    animation-name: cursor-blink;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+}
+
+.red {
+    color: #ff8471;
+}
+
+.yellow {
+    color: #fffc8b;
+}
+
+.cyan {
+    color: #b3feff;
+}
+
+.pink {
+    color: #ffb4fd;
+}
+
+.underline {
+    text-decoration: underline;
+}
