@@ -17,8 +17,4 @@ function registerHandlers() {
     registerHandler('whereami', (args) => {
         write('You are on <span class="yellow underline">piotrwyrwas.net</span>')
     })
-
-    registerHandler('exit', (args) => {
-        window.close()
-    })
 }
