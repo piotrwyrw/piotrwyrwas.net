@@ -48,10 +48,13 @@ function run() {
 
     if (handler === null) {
         write(`Unknown command: ${args[0]}.`)
+        view.innerHTML = view.innerHTML + `<br>`
         return
     }
 
     handler.fun(args.slice(1))
+
+    view.innerHTML = view.innerHTML + `<br>`
 }
 
 function write(line) {
@@ -80,12 +83,11 @@ function initialize() {
         }
 
         if (evt.key === "Enter") {
-
             view.innerHTML = view.innerHTML + '<br>'
 
             run()
 
-            view.innerHTML = view.innerHTML + `<br>${ps1}`
+            view.innerHTML = view.innerHTML + `${ps1}`
             window.scrollTo(0, document.body.scrollHeight);
             lineBuffer = ""
             return
